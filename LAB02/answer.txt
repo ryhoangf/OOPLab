@@ -1,0 +1,1 @@
+Có, Java cho phép tạo nhiều phương thức khởi tạo trong cùng một lớp, miễn là mỗi phương thức khởi tạo có danh sách tham số khác nhau, điều này được gọi là nạp chồng phương thức khởi tạo (constructor overloading). Vì vậy, chúng ta có thể tạo một phương thức khởi tạo để xây dựng đĩa DVD (DigitalVideoDisc) bằng tiêu đề và một phương thức khác để xây dựng nó bằng danh mục.
