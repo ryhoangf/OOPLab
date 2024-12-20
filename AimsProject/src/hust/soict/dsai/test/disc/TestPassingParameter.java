@@ -1,41 +1,58 @@
 // package hust.soict.dsai.test.disc;
-// import hust.soict.dsai.aims.media.DigitalVideoDisc;
+// // package aims;
+
+// import hust.soict.dsai.aims.disc.DigitalVideoDisc;
 
 // public class TestPassingParameter {
+// public static void main(String[] args) {
+// DigitalVideoDisc jungleDVD = new DigitalVideoDisc("Jungle");
+// DigitalVideoDisc cinderellaDVD = new DigitalVideoDisc("Cinderella");
 
-//     public static void main(String[] args) {
-//         // Create two DVD objects
-//         DigitalVideoDisc jungleDVD = new DigitalVideoDisc("Jungle");
-//         DigitalVideoDisc cinderellaDVD = new DigitalVideoDisc("Cinderella");
+// System.out.println("Before Swap:");
+// System.out.println("jungleDVD title: " + jungleDVD.getTitle());
+// System.out.println("cinderella title: " + cinderellaDVD.getTitle());
 
-//         // Print the titles before swapping
-//         System.out.println("Before swap:");
-//         System.out.println("jungle dvd title: " + jungleDVD.getTitle());
-//         System.out.println("cinderella dvd title: " + cinderellaDVD.getTitle());
+// swap(jungleDVD, cinderellaDVD);
 
-//         // Use an array to swap the two DVD objects
-//         DigitalVideoDisc[] dvdArray = {jungleDVD, cinderellaDVD};
-//         swap(dvdArray);
+// System.out.println("\nAfter Swap: ");
+// System.out.println("jungleDVD: " + jungleDVD.getTitle());
+// System.out.println("cinderellaDVD: " + cinderellaDVD.getTitle());
 
-//         // Print the titles after swapping
-//         System.out.println("\nAfter swap (correct):");
-//         System.out.println("jungle dvd title: " + dvdArray[0].getTitle());
-//         System.out.println("cinderella dvd title: " + dvdArray[1].getTitle());
+// System.out.println("Before changeTitle:");
+// System.out.println("jungleDVD title: " + jungleDVD.getTitle());
+// changeTitle(jungleDVD, cinderellaDVD.getTitle());
+// System.out.println("\nAfter changeTitle:");
+// System.out.println("cinderella title: " + cinderellaDVD.getTitle());
+// System.out.println("jungleDVD title: " + jungleDVD.getTitle());
 
-//         // Change the title of jungleDVD to cinderellaDVD's title
-//         changeTitle(jungleDVD, cinderellaDVD.getTitle());
-//         System.out.println("\nAfter changeTitle:");
-//         System.out.println("jungle dvd title: " + jungleDVD.getTitle());
-//     }
+// // // Hiển thị thông tin ban đầu
+// // System.out.println("Before swapTitles:");
+// // System.out.println("jungleDVD title: " + jungleDVD.getTitle());
+// // System.out.println("cinderellaDVD title: " + cinderellaDVD.getTitle());
 
-//     public static void swap(DigitalVideoDisc[] dvds) {
-//             DigitalVideoDisc temp = dvds[0];
-//             dvds[0] = dvds[1];
-//             dvds[1] = temp;
-//     }
+// // // // Gọi phương thức hoán đổi tiêu đề
+// // swap(jungleDVD, cinderellaDVD);
 
-//     // Change the title of the given DVD object
-//     public static void changeTitle(DigitalVideoDisc dvd, String title) {
-//         dvd.setTitle(title);
-//     }
+// // // Hiển thị thông tin sau khi hoán đổi
+// // System.out.println("\nAfter swapTitles:");
+// // System.out.println("jungleDVD title: " + jungleDVD.getTitle());
+// // System.out.println("cinderellaDVD title: " + cinderellaDVD.getTitle());
+
+// // }
+
+// // public static void swap(DigitalVideoDisc o1, DigitalVideoDisc o2) {
+// // String tmp = o1.getTitle();
+// // o1.setTitle(o2.getTitle());
+// // o2.setTitle(tmp);
+// }
+
+// public static void swap(DigitalVideoDisc o1, DigitalVideoDisc o2) {
+// DigitalVideoDisc tmp = o1;
+// o1 = o2;
+// o2 = tmp;
+// }
+
+// public static void changeTitle(DigitalVideoDisc dvd, String title) {
+// dvd.setTitle(title);
+// }
 // }
