@@ -1,69 +1,60 @@
 package hust.soict.dsai.aims.media;
 
-public abstract class Media implements Comparable<Media> {
+import java.util.Objects;
+
+public class Media {
+    private static int idCounter = 0;
     private int id;
     private String title;
     private String category;
     private float cost;
 
-    private static int nbMedia = 0;
-
-    public Media(String title, String category, float cost) {
+    public Media(String title, String category, float cost) throws Exception {
+        if (cost <= 0) {
+            throw new Exception("Cost must be positive.");
+        }
+        this.id = ++idCounter;
         this.title = title;
         this.category = category;
         this.cost = cost;
-        nbMedia++;
-        this.id = nbMedia;
-    }
-
-    public int getId() {
-        return id;
     }
 
     public String getTitle() {
         return title;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
     public String getCategory() {
         return category;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
     }
 
     public float getCost() {
         return cost;
     }
 
-    public void setCost(float cost) {
-        this.cost = cost;
+    public int getId() {
+        return id;
     }
 
-    public abstract void displayInfo();
-
-    @Override
-    public String toString() {
-        return "Media [Title: " + title + ", Category: " + category + ", Cost: $" + cost + "]";
-    }
-    @Override
-    public int compareTo(Media other) {
-        int titleComparison = this.title.compareToIgnoreCase(other.title);
-        if (titleComparison != 0) {
-            return titleComparison;
-        }
-        return Float.compare(other.cost, this.cost);
-    }
     @Override
     public boolean equals(Object obj) {
-        if (obj instanceof Media) {
-            Media other = (Media) obj;
-            return this.title.equalsIgnoreCase(other.getTitle());
+        if (obj == null) {
+            return false;
         }
-        return false;
+
+        if (this == obj) {
+            return true;
+        }
+
+        if (!(obj instanceof Media)) {
+            return false;
+        }
+
+        Media otherMedia = (Media) obj;
+        return Objects.equals(this.title, otherMedia.title);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(title); 
     }
 }

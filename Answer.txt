@@ -47,18 +47,24 @@ Nếu các DVD có quy tắc sắp xếp cụ thể (theo tiêu đề, sau đó 
 public class DVD implements Comparable<DVD> {
     private String title;
     private double length; // Giả sử độ dài tính bằng phút
-    private double cost;
+    private float cost;
 
     @Override
-    public int compareTo(DVD other) {
-        int titleComparison = this.title.compareTo(other.title);
-        if (titleComparison != 0) {
-            return titleComparison; // Sắp xếp theo tiêu đề
+    public int compareTo(Media other) {
+        if (other instanceof DigitalVideoDisc) {
+            DigitalVideoDisc dvd = (DigitalVideoDisc) other;
+            int titleComparision = this.getTitle().compareToIgnoreCase(dvd.getTitle());
+            if (titleComparision != 0) {
+                return titleComparision;
+            }
+            // so sánh độ dài
+            int lengthComparision = Integer.compare(dvd.getLength(), this.getLength());
+            if (lengthComparision != 0)
+                return lengthComparision;
+            // so sánh giá
+            return Float.compare(dvd.getCost(), this.getCost());
         }
-        int lengthComparison = Double.compare(other.length, this.length); // Độ dài giảm dần
-        if (lengthComparison != 0) {
-            return lengthComparison; // Sắp xếp theo độ dài theo thứ tự giảm dần
-        }
-        return Double.compare(this.cost, other.cost); // Sắp xếp theo chi phí
+        return 0;
     }
+
 }

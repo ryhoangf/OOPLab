@@ -4,25 +4,31 @@
 // import hust.soict.dsai.aims.media.DigitalVideoDisc;
 
 // public class CartTest {
-//     public static void main(String[] args) {
-//         // Create a new cart
-//         Cart cart = new Cart();
+// public static void main(String[] args) {
+// // Tạo các DVD mẫu
+// DigitalVideoDisc dvd1 = new DigitalVideoDisc("The Lion King", "Animation",
+// "Roger Allers", 87, 19.95);
+// DigitalVideoDisc dvd2 = new DigitalVideoDisc("Star Wars", "Science Fiction",
+// "George Lucas", 124, 24.95);
+// DigitalVideoDisc dvd3 = new DigitalVideoDisc("Aladdin", "Animation", "John
+// Musker", 90, 18.99);
 
-//         // Create DVDs and add them to the cart
-//         DigitalVideoDisc dvd1 = new DigitalVideoDisc("The Lion King", "Animation", "Roger Allers", 87, 19.95f);
-//         DigitalVideoDisc dvd2 = new DigitalVideoDisc("Star Wars", "Science Fiction", "George Lucas", 124, 24.95f);
-//         DigitalVideoDisc dvd3 = new DigitalVideoDisc("Aladdin", "Animation", "John Musker", 90, 18.99f);
-//         DigitalVideoDisc[] dvdArray = { dvd1, dvd2, dvd3 };
-//         cart.addDigitalVideoDisc(dvdArray);
+// // Tạo giỏ hàng và thêm DVD
+// Cart cart = new Cart();
+// cart.addDigitalVideoDisc(dvd1);
+// cart.addDigitalVideoDisc(dvd2);
+// cart.addDigitalVideoDisc(dvd3);
 
-//         // Test the print method
-//         cart.print();
+// // In giỏ hàng
+// cart.printCart();
 
-//         // Test searching by ID
-//         System.out.println("\n********************Search by ID*******************");
-//         DigitalVideoDisc searchById = cart.searchById(2); // Searching for ID = 2
-//         System.out.println(searchById != null ? searchById.toString() : "No match found.");
-//         System.out.println("***************************************************");
+// // Tìm kiếm theo ID
+// System.out.println("\nSearch by ID:");
+// cart.searchById(2); // Thay ID để kiểm tra
 
-//     }
+// // Tìm kiếm theo tiêu đề
+// System.out.println("\nSearch by Title:");
+// cart.searchByTitle("Star");
+// cart.searchByTitle("Unknown");
+// }
 // }
